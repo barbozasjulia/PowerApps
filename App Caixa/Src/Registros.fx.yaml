@@ -1,0 +1,305 @@
+Registros As screen:
+    Fill: =RGBA(31, 31, 31, 1)
+    LoadingSpinnerColor: =RGBA(255, 200, 61, 1)
+
+    "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        BorderColor: =RGBA(109, 109, 109, 1)
+        Height: =713
+        Items: =Filter(Caixa, Data >= DataInicio.SelectedDate && Data <= DataFim.SelectedDate && Responsavel.Value = ResponsavelFiltro.Selected.Result)
+        Layout: =Layout.Vertical
+        OnSelect: =Navigate(DetalheRegistro)
+        TemplatePadding: =0
+        TemplateSize: =Min(160, Self.Height - 60)
+        Width: =573
+        X: =39
+        Y: =285
+        ZIndex: =1
+
+        Image1 As image:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =128
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            OnSelect: =Select(Parent)
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Visible: =false
+            Width: =128
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =1
+
+        Subtitle1 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =28
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =18
+            Text: =ThisItem.Data
+            VerticalAlign: =VerticalAlign.Top
+            Width: =127
+            X: =80
+            Y: =30
+            ZIndex: =3
+
+        Separator1 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Fill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+        Icon4 As icon.CalendarBlank:
+            BorderColor: =RGBA(109, 109, 109, 1)
+            Color: =RGBA(184, 0, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =29
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.CalendarBlank
+            OnSelect: =Select(Parent)
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =29
+            X: =31
+            Y: =29
+            ZIndex: =6
+
+        Subtitle1_1 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =28
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =18
+            Text: =ThisItem.Responsavel.Value
+            VerticalAlign: =VerticalAlign.Top
+            Width: =127
+            X: =390
+            Y: =29
+            ZIndex: =7
+
+        Subtitle1_2 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =29
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =18
+            Text: ="R$"&ThisItem.Valor&" - "&ThisItem.'Forma de Pagamento'.Value
+            VerticalAlign: =VerticalAlign.Top
+            Width: =224
+            X: =390
+            Y: =87
+            ZIndex: =8
+
+        Subtitle1_4 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =18
+            Text: ="Cliente " & ThisItem.Cliente
+            VerticalAlign: =VerticalAlign.Top
+            Width: =245
+            X: =80
+            Y: =87
+            ZIndex: =10
+
+        Icon7 As icon.AddUser:
+            BorderColor: =RGBA(109, 109, 109, 1)
+            Color: =RGBA(184, 0, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =29
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.AddUser
+            OnSelect: =Select(Parent)
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =29
+            X: =31
+            Y: =87
+            ZIndex: =11
+
+        Icon8 As icon.Cut:
+            BorderColor: =RGBA(109, 109, 109, 1)
+            Color: =RGBA(184, 0, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =29
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.Cut
+            OnSelect: =Select(Parent)
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =29
+            X: =346
+            Y: =28
+            ZIndex: =12
+
+        Icon6 As icon.Money:
+            BorderColor: =RGBA(109, 109, 109, 1)
+            Color: =RGBA(184, 0, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =29
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.Money
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =29
+            X: =346
+            Y: =87
+            ZIndex: =13
+
+    Icon9 As icon.CancelBadge:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        Color: =RGBA(255, 200, 61, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =45
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.CancelBadge
+        OnSelect: =Navigate(Capa)
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =45
+        X: =552
+        Y: =36
+        ZIndex: =2
+
+    DataInicio As datepicker:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        CalendarHeaderFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        Color: =RGBA(255, 255, 255, 1)
+        DefaultDate: =DateAdd(Today(), -2, Days)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(31, 31, 31, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Format: ="dd/mm/yyyy"
+        Height: =50
+        HoverDateFill: =RGBA(144, 144, 144, 1)
+        IconBackground: =RGBA(255, 200, 61, 1)
+        IconFill: =RGBA(31, 31, 31, 1)
+        PaddingTop: =5
+        SelectedDateFill: =RGBA(255, 200, 61, 1)
+        Size: =18
+        Width: =220
+        X: =62
+        Y: =97
+        ZIndex: =3
+
+    DataFim As datepicker:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        CalendarHeaderFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(31, 31, 31, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Format: ="dd/mm/yyyy"
+        Height: =50
+        HoverDateFill: =RGBA(144, 144, 144, 1)
+        IconBackground: =RGBA(255, 200, 61, 1)
+        IconFill: =RGBA(31, 31, 31, 1)
+        PaddingTop: =5
+        SelectedDateFill: =RGBA(255, 200, 61, 1)
+        Size: =18
+        Width: =220
+        X: =62
+        Y: =164
+        ZIndex: =4
+
+    ResponsavelFiltro As combobox:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        ChevronBackground: =RGBA(31, 31, 31, 1)
+        ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+        ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+        ChevronFill: =RGBA(218, 218, 218, 1)
+        ChevronHoverBackground: =RGBA(79, 79, 79, 1)
+        ChevronHoverFill: =RGBA(218, 218, 218, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        DisplayFields: =["Result"]
+        Fill: =RGBA(31, 31, 31, 1)
+        Font: =Font.'Segoe UI'
+        Height: =50
+        HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(79, 79, 79, 1)
+        Items: =Distinct(Caixa, Responsavel.Value).Result
+        PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        PressedColor: =RGBA(31, 31, 31, 1)
+        PressedFill: =RGBA(255, 200, 61, 1)
+        SearchFields: =["Result"]
+        SearchItems: =Search(Distinct(Caixa, Responsavel.Value).Result,ResponsavelFiltro.SearchText,"Result")
+        SelectionColor: =RGBA(31, 31, 31, 1)
+        SelectionFill: =RGBA(255, 200, 61, 1)
+        SelectMultiple: =false
+        Size: =21
+        Width: =220
+        X: =366
+        Y: =97
+        ZIndex: =5
+
