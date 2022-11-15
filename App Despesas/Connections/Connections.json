@@ -1,0 +1,30 @@
+{
+  "9c525d3d-69b7-4923-a020-6655f14c74f0": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1610-greyhound-localization-RelayFix/1.0.1610.3091/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://escolatrabalhador4.sharepoint.com/sites/Lund/": {
+        "dataSources": {
+          "Despesas": {
+            "tableName": "4f4696af-64be-42b0-b2d6-8793d5a27054"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Despesas"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "9c525d3d-69b7-4923-a020-6655f14c74f0"
+  }
+}
